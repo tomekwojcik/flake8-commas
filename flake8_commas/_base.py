@@ -12,13 +12,7 @@ try:
 except ImportError:
     from flake8 import utils as stdin_utils
 
-import pkg_resources
-
-try:
-    dist = pkg_resources.get_distribution('flake8-commas')
-    __version__ = dist.version
-except pkg_resources.DistributionNotFound:
-    __version__ = 'unknown'
+__version__ = '2.1.0.post0'
 
 # A parenthesized expression list yields whatever that expression list
 # yields: if the list contains at least one comma, it yields a tuple;
@@ -341,7 +335,7 @@ class CommaChecker(object):
 
 
 class Token:
-    '''Python 2 and 3 compatible token'''
+    """Python 2 and 3 compatible token"""
     def __init__(self, token):
         self.token = token
 
